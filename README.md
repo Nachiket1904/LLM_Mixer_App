@@ -1,26 +1,31 @@
 # Mixture of LLMs App
 
-This project demonstrates how to build a Python application that uses multiple large language models (LLMs) collaboratively to generate high-quality responses. By leveraging open-source models and intelligent aggregation, this app can produce results that rival commercial solutions like GPT-4.
+This project is the implementation of the concepts discussed in my blog on the **Mixture of LLMs App**. It demonstrates how to use multiple open-source large language models (LLMs) collaboratively to generate high-quality responses. By leveraging intelligent aggregation, this app produces results that can rival commercial solutions like GPT-4.
+
+In my blog, I explain the idea behind using multiple models and synthesizing their responses for better overall performance. The code here follows that approach and is designed to be easy to use through an interactive web interface.
 
 ## Features
 
 - **Multiple Model Integration**: Generates responses using multiple open-source models, including `Qwen2-72B`, `Mixtral-8x22B`, and `DBRX`.
-- **Asynchronous Processing**: Processes models in parallel using Python's `asyncio`, ensuring speed and efficiency.
-- **Smart Aggregation**: Synthesizes responses intelligently using `Mixtral-8x22B` as an aggregator model.
-- **Interactive Web Interface**: Built with Streamlit for easy user interaction.
+- **Asynchronous Processing**: Uses Python's `asyncio` for parallel processing, ensuring faster response times.
+- **Smart Aggregation**: Synthesizes individual responses using `Mixtral-8x22B` as an aggregator model, creating a single, comprehensive answer.
+- **Interactive Web Interface**: Built with `Streamlit` to enable easy user interaction.
 
 ## How It Works
 
-1. **User Input**: You provide a prompt via the app's interface.
-2. **Model Responses**: The app queries multiple LLMs to generate individual responses.
-3. **Aggregation**: An aggregator model synthesizes the individual responses into a single, high-quality answer.
-4. **Display**: Both individual responses and the aggregated response are displayed in the app.
+1. **User Input**: The user provides a prompt through the app's interface.
+2. **Model Responses**: The app queries multiple LLMs to generate individual responses asynchronously.
+3. **Aggregation**: The app aggregates these responses using a separate model to create a refined, accurate answer.
+4. **Display**: Both the individual model responses and the aggregated response are displayed in the app.
 
 ## Installation
 
 ### Prerequisites
+
 - Python 3.7 or higher
-- A Together AI API key (sign up at [Together AI](https://together.ai)).
+- A Together AI API key (sign up at [Together AI](https://www.together.ai/))
+
+
 
 ### Steps
 1. Clone this repository:
@@ -42,3 +47,6 @@ streamlit run app.py
 2) Enter your Together AI API key in the input field.
 3) Provide a query or prompt and click the Get Answer button.
 4) View the individual responses and the aggregated response.
+
+
+This project is designed to complement the blog post and demonstrate the practical application of the concepts shared there. If you have any questions or suggestions, feel free to reach out!
